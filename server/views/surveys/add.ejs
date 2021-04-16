@@ -1,0 +1,45 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<div id="survey">
+     <div class="bg-light" id="survey">
+    <main class="container py-5">
+      <div class="row py-5">
+        <div class="offset-md-1 col-md-11">
+          <form class = "form" method="POST" >
+            <label for="nameTextField">Survey name: </label><input type="text" name = "name" value = "SurveyName"></input>
+            <table class="table table-bordered table-striped table-hover">
+              <!--Header row-->
+              <tr class="d-flex">
+                <th class="text-center col-7"> Qustion </th>
+                <th class="text-center col-5"> Choices </th>
+              </tr>
+              <!--Repeatable Template Row-->
+              <tr class="d-flex">
+                  <td class="text-center col-7"><input type="text" name="questions" placeholder="Enter the question""></td>
+                  <td class="text-left col-5">
+                      <ul>
+                          <li>
+                              <input type="text" name="choices0" placeholder="Enter the choice">
+                              <button class="btn btn-danger btn-sm" id = "btnDeleteChoice" type="button" > <i class="fas fa-trash"></i> Delete choice</button>
+                          </li>
+                          <button class="btn btn-primary" id = "btnAddchoices" type="button" > <i class="fas fa-plus"></i> Add choice</button>
+                      </ul>
+                  </td>
+              </tr>
+              <tr class="d-flex">
+                <td class="text-center col-7"><button class="btn btn-primary" id = "btnAddQuestion" type="button" > <i class="fas fa-plus"></i> Add Question</button></td>
+                <td class="text-left col-5"></td>
+              </tr> 
+            </table>
+            <button class="btn btn-primary" type = "submit">
+                  <i class="fas fa-edit"></i> Submit</button>
+                  <a href="/survey-list" class="btn btn-warning fas fa-undo">Cancel</a>
+          </form>  
+        </div>
+      </div>
+  </main>
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

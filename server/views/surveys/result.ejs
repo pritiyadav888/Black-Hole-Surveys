@@ -1,0 +1,43 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+  <div id="survey">
+     <div class="bg-light" id="survey">
+    <main class="container py-5">
+      <div class="row py-5">
+        <% if (ResultList[0] != null){%>
+        <div class="offset-md-2">
+          <h1> <%= title %></h1>
+            <table class="table table-bordered table-striped table-hover">
+              <!--Header row-->
+                <tr class="d-flex">
+                <%for (let i = 0; i < ResultList[ResultList.length-1].questions.length; i++){ %>
+                    <th class="text-center col"> <%= ResultList[ResultList.length-1].questions[i] %></th>
+                <%} %>
+                </tr>
+              <!--Repeatable Template Row-->
+                <tr class="d-flex">
+                    <%for (let i = 0; i < ResultList[ResultList.length-1].questions.length; i++){ %>   
+                    <td class="text-center col">
+                        <ul>
+                            <% for (let j = 0; j < ResultList.length; j++) {%>
+                            <li>
+                                <label><%= ResultList[j].answers[i] %></label>
+                            </li>
+                            <% } %>
+                        </ul>
+                    </td>
+                    <%} %>
+                </tr>
+            </table>
+            <a href="/survey-list" class="btn btn-primary fas fa-check">Ok</a>
+        </div>
+        <% } else {%>
+        <div><h1>No results for this survey</h1></div>
+        <% }%>
+      </div>
+  </main>
+
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

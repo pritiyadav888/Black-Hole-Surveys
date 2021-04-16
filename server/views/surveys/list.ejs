@@ -1,0 +1,67 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+   <div id="survey">
+     <div class="bg-light" id="survey">
+    <main class="container py-5">
+      <div class="row py-5">
+        <div class="offset-md-1 col-md-11">
+          <h1><%= title %></h1>
+          <% if (typeof displayName == 'string' && displayName) { %>
+            <a href="/survey-list/add" class="btn tn-primary" role = "button">
+            <i class="fas fa-plus-circle"></i> Add a Survey</a>
+          <% } %>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+            <!--Header row-->
+            <tr class="d-flex">
+              <% if (typeof displayName == 'string' && displayName) { %>
+                <th class="text-center col-8"> Survey Name</th>
+                <th class="text-center col-1"></th>
+                <th class="text-center col-1"></th>
+                <th class="text-center col-1"></th>
+                <th class="text-center col-1"></th>
+              <% } else { %>
+                <th class="text-center col-9"> Survey Name</th>
+                <th class="text-center col-3"></th>
+              <% } %>
+            </tr>
+            <!--Repeatable Template Row-->
+            <% for(let count=0; count < SurveyList.length; count++){ %>
+              <tr class="d-flex">
+                <% if (typeof displayName == 'string' && displayName) { %>
+                  <td class="text-center col-8"><%= SurveyList[count].name %></td>
+
+                  <td class="text-center col-1">
+                    <a href="/survey-list/take/<%= SurveyList[count]._id %>" class="btn btn-success btn-sm">
+                    <i class="fas fa-pencil-alt"></i> Take</a>
+                  </td>
+                  
+                  <td class="text-center col-1">
+                    <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                    <i class="fas fa-edit"></i> Edit</a>
+                  </td>
+                  <td class="text-center col-1">
+                    <a href="/survey-list/results/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                    <i class="fas fa-poll"></i> Results</a>
+                  </td>
+                  <td class="text-center col-1">
+                    <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash alt"></i> Delete</a>
+                  </td>
+                <% } else { %>
+                  <td class="text-center col-9"><%= SurveyList[count].name %></td>
+                  <td class="text-center col-3">
+                    <a href="/survey-list/take/<%= SurveyList[count]._id %>" class="btn btn-success btn-sm">
+                    <i class="fas fa-pencil-alt"></i> Take</a>
+                  </td>
+                <% } %>
+              </tr>
+            <% } %>
+          </table>
+        </div>
+      </div>
+  </main>
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

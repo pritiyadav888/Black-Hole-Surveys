@@ -1,0 +1,45 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+  <div id="survey">
+     <div class="bg-light" id="survey">
+    <main class="container py-5">
+      <div class="row py-5">
+        <div class="offset-md-1 col-md-11">
+          <h1> <%= survey.name %></h1>
+          <form class = "form" method="POST" >
+            <table class="table table-bordered table-striped table-hover">
+              <!--Header row-->
+              <tr class="d-flex">
+                <th class="text-center col-7"> Question</th>
+                <th class="text-left col-5"> Choices</th>
+              </tr>
+              <!--Repeatable Template Row-->
+              <% for(let count=0; count < survey.questions.length; count++){ %>
+                <% if (survey.choices[count] == null){ continue; }%>
+                <tr class="d-flex">
+                  <td class="text-center col-7"><%= survey.questions[count] %></td>
+                  <td class="text-left col-5">
+                      <ul>
+                          <% for (let i = 0; i < survey.choices[count].length; i++) { %>
+                          <li>
+                              <input type="radio" name = "question<%= count%>" required value="<%= survey.choices[count][i] %>"/><label><%= survey.choices[count][i]%></label>
+                          </li>
+                          <% } %>
+                      </ul>
+                  </td>
+                </tr>
+              <% } %>
+            </table>
+            <button class="btn btn-primary" type = "submit">
+                  <i class="fas fa-edit"></i> Submit</button>
+                  <a href="/survey-list" class="btn btn-warning fas fa-undo">Cancel</a>
+          </form>      
+
+        </div>
+      </div>
+  </main>
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

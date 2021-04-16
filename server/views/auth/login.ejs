@@ -1,0 +1,63 @@
+ <%- include ../partials/header.ejs %>
+
+      <%- include ../partials/main_nav.ejs %>
+
+<div id="login">
+<div class="bg-light" id="login">
+
+  <div class="container py-5">
+    <div class="row h-200  py-5">
+      <div class="col-lg-6">
+       
+      
+      
+        <!-- message area  -->
+       <% if(messages.length> 0) {%>
+        <div class="alert alert-danger">
+           <%= messages %>
+        </div>
+       <% } %>
+        
+    
+
+      <div class="row">
+        <div class="offset-lg-3 col-lg-4">
+          <h3>Please Login</h3>
+          <br>
+          <form  method="POST" autocomplete="off">
+              <fieldset class="form-group">
+                <label for="username"><strong>Username: </strong></label>
+                <input type="text" class="form-contrl"
+                name = 'username' placeholder="Enter username"
+                id="username" required autofocus >
+              </fieldset>
+
+              <fieldset class="form-group">
+                <label for="password"><strong>password: </strong></label>
+                <input type="password" class="form-contrl"
+                name = 'password' placeholder="Enter password"
+                id="password" required>
+                 or
+                <a href="/register" style="color:Tomato;"><strong>  Register</strong></a>
+              </fieldset>
+       
+              <fieldset class="form-group text-right">
+                <input type="submit" class="btn btn-success" value="Login">
+                <a href="/">
+                  <input type="button" class="btn btn-warning" value="Cancel">
+                </a>
+                
+              </fieldset>
+          </form>
+        </div>
+    </div>
+</div>
+</div>    
+</div> 
+
+
+
+      <%- include ../partials/bottom_nav.ejs %>
+
+      <%- include ../partials/footer.ejs %>
+        

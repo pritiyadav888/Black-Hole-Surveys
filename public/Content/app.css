@@ -1,0 +1,326 @@
+/* custom css goes here */
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+a.button {
+  backface-visibility: hidden;
+}
+section::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 80%;
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.8) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.8) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+section h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font: normal 300 64px/1 "Josefin Sans", sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#thanks {
+  background-color: #fff;
+}
+#thanks::after {
+  content: none;
+}
+#thanks div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#thanks h2 {
+  margin-bottom: 60px;
+  color: #333;
+  font: normal 300 64px/1 "Josefin Sans", sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+#thanks p {
+  color: #333;
+  font: normal 400 20px/1 "Josefin Sans", sans-serif;
+}
+#thanks p a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+#thanks p a:hover {
+  color: #888;
+}
+.demo a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font: normal 400 20px/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.demo a:hover {
+  opacity: 0.5;
+}
+
+#section01 a {
+  padding-top: 60px;
+}
+#section01 a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+
+#index { 
+  background: linear-gradient(to top, rgba(195, 195, 207, 0.911), 20%, rgb(151, 151, 187)),
+  url("/images/working-girl.png"); 
+    background-size: cover;
+ }
+
+
+#about {
+  background-image: linear-gradient(
+    to right,
+    rgb(188, 196, 163),
+    hsl(189, 71%, 73%),
+    hsl(152, 66%, 80%)
+  );
+}
+#login {
+  background: linear-gradient(to right, transparent, mistyrose),
+      url("../images/login.jpg");
+
+      background-size: cover;
+      
+   }
+  
+   #register { 
+    background: linear-gradient(to left, transparent, rgb(236, 229, 228)),
+      url("../images/register.jpg");
+
+      background-size: cover;
+   }
+
+
+   #survey { 
+    background:linear-gradient(
+      rgba(248, 246, 246, 0.6), 
+      rgba(250, 246, 246, 0.6)
+      ),
+    
+     url("../images/survey2.jpg");
+
+      background-size: cover;
+   }
+   #add { 
+    background: linear-gradient(to top, rgb(210, 224, 250), 20%, rgb(193, 207, 240));
+
+      background-size: cover;
+   }
+   #edit { 
+    background: linear-gradient(to top, rgb(210, 224, 250), 20%, rgb(193, 207, 240));
+
+      background-size: cover;
+   }
+
+   #take { 
+    background: linear-gradient(to top, rgb(210, 224, 250), 20%, rgb(193, 207, 240));
+
+      background-size: cover;
+   }
+
+.image-home{
+  width: 500px;
+  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.containerAbout p {
+  display: inline-flex;
+
+  width: 50%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+.gr-1 {
+  background: linear-gradient(170deg, #01e4f8 0%, #1d3ede 100%);
+}
+.gr-2 {
+  background: linear-gradient(170deg, #b4ec51 0%, #429321 100%);
+}
+.gr-3 {
+  background: linear-gradient(170deg, #c86dd7 0%, #3023ae 100%);
+}
+* {
+  transition: 0.5s;
+}
+.h-100 {
+  height: 100vh !important;
+}
+.align-middle {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.column {
+  margin-top: 3rem;
+  padding-left: 3rem;
+}
+.column:hover {
+  padding-left: 0;
+}
+.column:hover .card .txt {
+  margin-left: 1rem;
+}
+.column:hover .card .txt h1,
+.column:hover .card .txt p {
+  color: white;
+  opacity: 1;
+}
+.column:hover a {
+  color: white;
+}
+.column:hover a:after {
+  width: 10%;
+}
+.card {
+  min-height: 170px;
+  margin: 0;
+  padding: 1.7rem 1.2rem;
+  border: none;
+  border-radius: 0;
+  color: black;
+  letter-spacing: 0.05rem;
+  font-family: "Oswald", sans-serif;
+  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+}
+.card .txt {
+  margin-left: -3rem;
+  z-index: 1;
+}
+.card .txt h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.card .txt p {
+  font-size: 0.7rem;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0rem;
+  margin-top: 33px;
+  opacity: 0;
+  color: white;
+}
+.card a {
+  z-index: 3;
+  font-size: 0.7rem;
+  color: black;
+  margin-left: 1rem;
+  position: relative;
+  bottom: -0.5rem;
+  text-transform: uppercase;
+}
+.card a:after {
+  content: "";
+  display: inline-block;
+  height: 0.5em;
+  width: 0;
+  margin-right: -100%;
+  margin-left: 10px;
+  border-top: 1px solid white;
+  transition: 0.5s;
+}
+.card .ico-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card i {
+  position: relative;
+  right: -50%;
+  top: 60%;
+  font-size: 12rem;
+  line-height: 0;
+  opacity: 0.2;
+  color: white;
+  z-index: 0;
+}
+
+.bg-custom-2 {
+  background-image: linear-gradient(15deg, #290724 0%, #80d0c7 100%);
+  font-family: cursive;
+}
+
+.nav-item a{
+  font-family: cursive;
+  color: rgb(1, 4, 17) !important;
+}
